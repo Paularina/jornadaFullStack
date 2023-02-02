@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Paularina/jornadaFullStack/issues"
   },
-  "homepage": "https://github.com/Paularina/jornadaFullStack#readme"
+  "homepage": "https://github.com/Paularina/jornadaFullStack#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
