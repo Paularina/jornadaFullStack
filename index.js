@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 
+//O que vier no body da requisição é JSON
+app.use(express.json());
+
 app.get("/", function (req, res) {
   res.send("Aprendendo Node");
 });
 
 //Endpoint/oi
-
 app.get("/oi", function (req, res) {
   res.send("Oi");
 });
@@ -25,7 +27,7 @@ app.get("/items", function (req, res) {
   res.send(items);
 });
 
-//Endpoint - Read ById [GET]
+//Endpoint - Read ById [GET]/items/:id
 
 app.get("/items/:id", function (req, res) {
   const id = req.params.id;
@@ -33,7 +35,12 @@ app.get("/items/:id", function (req, res) {
   res.send(item);
 });
  
-//Endpoint - Create [POST]
+//Endpoint - Create [POST]/items
+
+app.post("/items",function (req, res){
+  console.log(req.body);  
+  res.send("Create");
+})
 
 app.listen(3000);
 
