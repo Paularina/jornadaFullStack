@@ -27,10 +27,14 @@ app.get("/items", function (req, res) {
 
 //Endpoint - Read ById [GET]
 
-app.get("/items/1", function (req, res) {
-  res.send(items[1]);
+app.get("/items/:id", function (req, res) {
+  const id = req.params.id;
+  const item = items[id-1];
+  res.send(item);
 });
  
+//Endpoint - Create [POST]
+
 app.listen(3000);
 
 console.log("servidor rodando em https://3000-paularina-jornadafullst-3vzq4zvhe0e.ws-us85.gitpod.io/");
